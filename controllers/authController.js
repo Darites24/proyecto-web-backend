@@ -67,7 +67,8 @@ const loginUser = (req, res) => {
 
         return res.status(200).json({
             mensaje: "Inicio de sesión exitoso",
-            token
+            token,
+            usuario_id: usuario.id
         });
     });
 };
