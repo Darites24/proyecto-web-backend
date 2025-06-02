@@ -7,5 +7,6 @@ const {
 
 router.post("/", crearCategoria);
 router.get("/", obtenerCategorias);
+router.delete("/:id", eliminarCategoria);
 
 module.exports = router;

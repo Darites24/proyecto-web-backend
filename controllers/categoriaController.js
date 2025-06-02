@@ -36,4 +36,18 @@ const obtenerCategorias = (req, res) => {
     });
 };
 
-module.exports = { crearCategoria, obtenerCategorias };
+const eliminarCategoria = (req, res) => {
+    const { id } = req.params;
+
+    const query = "DELETE FROM categorias WHERE id = ?";
+    db.query(query, [id], (err, resultado) => {
+        if (err) {
+            console.error("Error al eliminar categoría: ", err);
+            return res.status(500).json({ mensaje: "Error al eliminar la categoría" });
+        }
+
+        return res.status(200).json({ mensaje: "Categoría eliminada correctamente" });
+    });
+};
+
+module.exports = { crearCategoria, obtenerCategorias, eliminarCategoria };
