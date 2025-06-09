@@ -35,10 +35,10 @@ const getTotales = async (usuario_id) => {
     FROM movimientos
     WHERE usuario_id = ?
     `;
-   const [result] = await query(sql, [usuario_id]);
-   return {
-    totalIngresos: result.total_ingresos || 0,
-    totalEgresos: result.total_egresos || 0
+    const [result] = await query(sql, [usuario_id]);
+    return {
+        totalIngresos: result.total_ingresos || 0,
+        totalEgresos: result.total_egresos || 0
     };
 };
 
